@@ -1,0 +1,15 @@
+FROM alpine:3.7
+MAINTAINER Matthew Endsley <mendsley@gmail.com>
+
+COPY tini /sbin/
+COPY exitd /sbin/
+COPY spiped /sbin/
+COPY parchment /sbin/parchment
+COPY run-parchment.sh /bin/parchment
+COPY sharedkey /etc/spipedkey
+
+ENTRYPOINT ["/sbin/tini", "--"]
+CMD ["/sbin/exitd", "/bin/parchment", "/bin/spiped"]
+
+COPY run-spiped-server.sh /bin/spiped
+COPY conf-server.json /etc/parchment.conf

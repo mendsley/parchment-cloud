@@ -1,0 +1,14 @@
+FROM alpine:3.7
+MAINTAINER Matthew Endsley <mendsely@gmail.com>
+
+RUN set -eux \
+	&& apk update \
+	&& apk add --no-cache \
+		g++=6.4.0-r5 \
+		make \
+		openssl-dev=1.0.2n-r0 \
+		git \
+		go=1.9.2-r1 \
+	&& mkdir -p /go/src/ \
+	;
+ENV GOPATH=/go

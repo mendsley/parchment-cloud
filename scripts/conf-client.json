@@ -1,0 +1,19 @@
+{
+	"inputs": [
+		{
+			"address": "unix:///external/parchment.sock",
+			"filemode": "0777"
+		}
+	],
+	"outputs": [
+		{
+			"type": "relay",
+			"remote": "unix:///var/run/remote.sock",
+			"path": "/backup/backup"
+		},
+		{
+			"type": "file",
+			"path": "/var/log/parchment/local.log"
+		}
+	]
+}

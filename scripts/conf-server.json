@@ -1,0 +1,12 @@
+{
+	"inputs": [
+		{
+			"address": "unix:///var/run/remote.sock"
+		}
+	],
+	"outputs": [
+		{
+			"type": "stdout"
+		}
+	]
+}

@@ -1,0 +1,6 @@
+FROM scratch
+MAINTAINER Matthew Endsley <mendsley@gmail.com>
+
+COPY parchment-journald /
+ENTRYPOINT ["/parchment-journald"]
+
