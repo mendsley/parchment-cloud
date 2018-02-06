@@ -8,7 +8,7 @@ COPY parchment /sbin/parchment
 COPY run-parchment.sh /bin/parchment
 COPY sharedkey /etc/spipedkey
 
-ENTRYPOINT ["/sbin/tini", "--"]
+ENTRYPOINT ["/sbin/tini", "-s" "--"]
 CMD ["/sbin/exitd", "/bin/parchment", "/bin/spiped"]
 
 COPY run-spiped-server.sh /bin/spiped
