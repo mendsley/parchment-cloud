@@ -8,7 +8,7 @@ RUN set -eux \
 		make \
 		openssl-dev=1.0.2n-r0 \
 		git \
-		go=1.9.2-r1 \
+		go=1.9.4-r0 \
 	&& mkdir -p /go/src/ \
 	;
 ENV GOPATH=/go
