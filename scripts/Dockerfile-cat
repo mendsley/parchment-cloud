@@ -1,5 +1,5 @@
 FROM scratch
 MAINTAINER Matthew Endsley <mendsley@gmail.com>
 
-COPY parchmentcat /
-ENTRYPOINT ["/parchmentcat"]
+COPY parchment-cat /
+ENTRYPOINT ["/parchment-cat"]

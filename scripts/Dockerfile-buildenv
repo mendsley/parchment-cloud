@@ -1,6 +1,8 @@
 FROM alpine:3.7
 MAINTAINER Matthew Endsley <mendsely@gmail.com>
 
+ENV GOPATH=/go
+
 RUN set -eux \
 	&& apk update \
 	&& apk add --no-cache \
@@ -9,6 +11,8 @@ RUN set -eux \
 		openssl-dev=1.0.2n-r0 \
 		git \
 		go=1.9.4-r0 \
-	&& mkdir -p /go/src/ \
+		curl=7.58.0-r0 \
+	&& mkdir -p ${GOPATH}/src/ \
+	&& mkdir -p ${GOPATH}/bin/ \
+	&& curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh \
 	;
-ENV GOPATH=/go

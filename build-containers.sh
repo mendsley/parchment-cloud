@@ -23,12 +23,13 @@ docker run \
 	-v $(pwd)/.out:/out \
 	-v $(pwd)/parchment:/go/src/github.com/mendsley/parchment \
 	parchment/buildenv sh -c "set -eux \
+		&& go get ... \
 		&& go test -v github.com/mendsley/... \
 		&& GGO_ENABLED=0 go install \
 			-tags netgo \
 			-ldflags '-w -extldflags \"-static\"' \
 			-v \
-			github.com/mendsley/parchment/cmd/parchmentcat \
+			github.com/mendsley/parchment/cmd/parchment-cat \
 			github.com/mendsley/parchment/cmd/parchment-journald \
 		&& go install -v github.com/mendsley/parchment \
 		&& cp /go/bin/* /out/ \
